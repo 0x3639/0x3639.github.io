@@ -3,8 +3,12 @@ layout: default
 ---
 
 ## Contact `0x3639`
+- Telegram: @ZeroX3639
+- Twitter: https://x.com/0x3639
+- Forum: https://forum.hypercore.one/u/0x3639/
+- PGP: 
 ```
-\-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEYsLNbRYJKwYBBAHaRw8BAQdAZYHTAkHadBhSk2lHH/r40zZrCWcCzEoe
 f2UlYfCLECPNLTB4MzYzOUBwcm90b25tYWlsLmNvbSA8MHgzNjM5QHByb3Rv
@@ -16,6 +20,6 @@ XgKoYwlWk/YnUpUXmzNu4WzG8NbEv/F4OQzqcA0DAQgHwngEGBYIAAkFAmLC
 zW0CGwwAIQkQ9rgtEVWHnasWIQQxCg6uqESXVM8X6Lv2uC0RVYedqxr3AQD0
 sJJgMQrpXdNo/vildydKyMq9UBjYVwEbcsK0dh85UQD/QO/x9WxrmuPJZD1t
 XiDNkL0IxdYLMV6wOzI7J3RA8Ag=
-\=3ZXJ
-\-----END PGP PUBLIC KEY BLOCK-----
+=3ZXJ
+-----END PGP PUBLIC KEY BLOCK-----
 ```
