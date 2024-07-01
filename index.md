@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Contact `0x3639`
+## Contact @0x3639
 - Telegram: @ZeroX3639
 - Twitter: https://x.com/0x3639
 - Forum: https://forum.hypercore.one/u/0x3639/
