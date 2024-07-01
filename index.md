@@ -6,7 +6,7 @@ layout: default
 - Telegram: @ZeroX3639
 - Twitter: https://x.com/0x3639
 - Forum: https://forum.hypercore.one/u/0x3639/
-- PGP: 
+
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
