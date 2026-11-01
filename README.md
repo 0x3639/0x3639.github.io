@@ -2,7 +2,7 @@
 
 Contact page and PGP public key for 0x3639. One static HTML page, built with
 [Astro](https://astro.build), served from GitHub Pages at
-[www.0x3639.com](https://www.0x3639.com).
+[0x3639.com](https://0x3639.com).
 
 ## Layout
 

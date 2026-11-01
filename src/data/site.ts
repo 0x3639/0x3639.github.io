@@ -7,7 +7,7 @@ export const site = {
   title: '0x3639',
   tagline: 'Zenon Network is an independent entity',
   description: 'Contact channels and PGP public key for 0x3639.',
-  url: 'https://www.0x3639.com',
+  url: 'https://0x3639.com',
   repo: 'https://github.com/0x3639/0x3639.github.io',
 };
 
