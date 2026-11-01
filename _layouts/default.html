@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#000000">
+    <meta name="generator" content="Jekyll, vi, and a 1993 state of mind">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
-
 {% seo %}
   </head>
 
   <body>
+    <!-- ======================================================= -->
+    <!--  Welcome to my homepage.                                -->
+    <!--  No cookies. No trackers. No frames. View source freely. -->
+    <!--  Cypherpunks write code.                                -->
+    <!-- ======================================================= -->
 
-    <header>
-      <div class="container">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+    <a class="skip" href="#main">skip to content</a>
+
+    <div class="crt">
+      <header class="masthead">
+        <a id="a-title" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+<pre class="banner" aria-hidden="true">
+  ___           _____   __     _____   ___
+ / _ \ __  __ |___ /  / /_  |___ /  / _ \
+| | | |\ \/ /   |_ \ | '_ \   |_ \ | (_) |
+| |_| | &gt;  &lt;   ___) || (_) | ___) | \__, |
+ \___/ /_/\_\ |____/  \___/ |____/    /_/
+</pre>
+          <h1 class="sr-only">{{ site.title | default: site.github.repository_name }}</h1>
         </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        <p class="tagline">
+          <span class="prompt">$</span> cat MOTD<br>
+          <span class="motd">{{ site.description | default: site.github.project_tagline }}</span>
+        </p>
 
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker__track">
+            <span>*** CYPHERPUNKS WRITE CODE *** PRIVACY IS NOT SECRECY *** TRUST MATH, NOT MEN *** VERIFY, DON'T TRUST *** RUN YOUR OWN NODE *** ENCRYPT EVERYTHING *** THIS SITE SETS NO COOKIES *** </span>
+            <span>*** CYPHERPUNKS WRITE CODE *** PRIVACY IS NOT SECRECY *** TRUST MATH, NOT MEN *** VERIFY, DON'T TRUST *** RUN YOUR OWN NODE *** ENCRYPT EVERYTHING *** THIS SITE SETS NO COOKIES *** </span>
+          </div>
+        </div>
 
-    <div class="container">
-      <section id="main_content">
+        <nav class="navbar" aria-label="Site">
+          [ <a href="#contact">contact</a> ]
+          [ <a href="#pgp">pgp key</a> ]
+          [ <a href="#simplex">simplex</a> ]
+          [ <a href="#links">links</a> ]
+          [ <a href="{{ site.github.repository_url }}">source</a> ]
+        </nav>
+      </header>
+
+      <hr class="rule">
+
+      <main id="main" class="content">
         {{ content }}
-      </section>
+      </main>
+
+      <hr class="rule">
+
+      <footer class="colophon">
+        <div class="badges" aria-label="Badges">
+          <span class="badge badge--any"><b>BEST VIEWED</b><i>any browser</i></span>
+          <span class="badge badge--pgp"><b>PGP</b><i>INSIDE</i></span>
+          <span class="badge badge--nojs"><b>NO COOKIES</b><i>NO TRACKERS</i></span>
+          <span class="badge badge--vi"><b>MADE WITH</b><i>vi &amp; jekyll</i></span>
+          <span class="badge badge--w3"><b>HTML 5</b><i>hand-rolled</i></span>
+          <span class="badge badge--ssl"><b>SSL</b><i>SECURED</i></span>
+        </div>
+
+        <p class="counter-line">
+          You are visitor number
+          <span class="counter" title="Decorative. This site keeps no logs and runs no analytics." aria-label="decorative visitor counter">
+            <b>0</b><b>0</b><b>0</b><b>0</b><b>3</b><b>6</b><b>3</b><b>9</b>
+          </span>
+          since 1993
+        </p>
+
+        <p class="meta">
+          Last modified: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%d %b %Y %H:%M UTC" }}</time>
+          &middot; Served from <a href="https://pages.github.com/">GitHub Pages</a>
+          &middot; <a href="{{ site.github.repository_url }}">view source</a>
+        </p>
+
+        <p class="quote">
+          &ldquo;Cypherpunks write code.&rdquo; &mdash; Eric Hughes, 1993
+        </p>
+
+        <p class="prompt-line" aria-hidden="true">
+          <span class="prompt">0x3639@zenon:~$</span> <span class="cursor">&#9608;</span>
+        </p>
+      </footer>
     </div>
   </body>
 </html>
