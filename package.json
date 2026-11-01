@@ -1,0 +1,14 @@
+{
+  "name": "0x3639.com",
+  "private": true,
+  "type": "module",
+  "description": "Contact page and PGP key for 0x3639",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview --host"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

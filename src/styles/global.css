@@ -1,0 +1,139 @@
+/* ------------------------------------------------------------------
+   0x3639.com — design tokens and base styles.
+   Palette and metrics come from the "2a MOTD" design frame.
+   ------------------------------------------------------------------ */
+
+:root {
+  --bg: #0a0d0a;
+  --bg-pre: #060806;
+  --bg-raised: #141a14;
+
+  --fg: #3fcf3f; /* body green */
+  --fg-bright: #4ddc4d; /* banner, ## markers */
+  --fg-dim: #5f9f5f; /* labels, prompts, secondary copy */
+  --fg-text: #d8e8d0; /* headings and emphasised text */
+
+  --amber: #e8a33d; /* links */
+  --amber-hover: #ffc266;
+
+  --border: #2a3f2a;
+  --rule: #2f5a2f;
+  --ticker-border: #1f3a1f;
+
+  --font-mono: 'DejaVu Sans Mono', Menlo, Monaco, 'Lucida Console', 'Courier New', monospace;
+  --font-size: 15px;
+  --measure: 1000px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: var(--font-size);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--amber);
+  text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+  color: var(--amber-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  outline: none;
+}
+
+pre {
+  overflow-x: auto;
+  font-family: inherit;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed var(--rule);
+  width: 100%;
+  margin: 0 0 22px;
+}
+
+/* visually hidden, still read by assistive tech */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* "[ label ]" link groups used by nav, key actions, etc. */
+.brackets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--fg-dim);
+}
+
+/* small bordered label like PGP PREFERRED */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  padding: 1px 5px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* label / value grid used by the key facts and the links section */
+.kv {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2px 16px;
+  margin: 0 0 32px;
+  color: var(--fg-text);
+}
+.kv dt {
+  color: var(--fg-dim);
+}
+.kv dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* a line that looks like a shell prompt */
+.prompt {
+  color: var(--fg-dim);
+}
+
+@media (max-width: 560px) {
+  .kv {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .kv dt {
+    margin-top: 8px;
+  }
+  .kv dt:first-child {
+    margin-top: 0;
+  }
+}

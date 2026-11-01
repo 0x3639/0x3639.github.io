@@ -1,0 +1,59 @@
+---
+import Section from './Section.astro';
+import { simplex } from '../data/site';
+---
+
+<Section id="simplex" title="SimpleX">
+  <div class="simplex">
+    <img
+      src={simplex.qr}
+      width="220"
+      height="220"
+      alt="SimpleX Chat connection QR code for 0x3639"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="copy">
+      <p class="headline">{simplex.headline}</p>
+      <p class="prompt">{simplex.body}</p>
+      <p class="prompt">$ open <a href={simplex.url}>simplex.chat</a></p>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .simplex {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    margin: 0 0 32px;
+  }
+  img {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 220px;
+    display: block;
+    border: 1px solid var(--border);
+    padding: 6px;
+    background: #fff;
+  }
+  .copy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 48ch;
+    text-wrap: pretty;
+  }
+  .copy p {
+    margin: 0;
+  }
+  .headline {
+    color: var(--fg-text);
+  }
+
+  @media (max-width: 560px) {
+    .simplex {
+      flex-direction: column;
+    }
+  }
+</style>

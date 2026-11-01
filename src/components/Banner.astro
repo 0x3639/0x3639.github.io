@@ -1,0 +1,44 @@
+---
+import { site } from '../data/site';
+---
+
+<header class="banner">
+  <a href="/" aria-label={`${site.title} home`}>
+    <pre aria-hidden="true"> ██████  ██   ██ ██████   ██████  ██████   ██████
+██    ██  ██ ██       ██ ██            ██ ██    ██
+██    ██   ███    █████  ███████   █████  ██    ██
+██    ██  ██ ██       ██ ██    ██      ██  ███████
+ ██████  ██   ██ ██████   ██████  ██████        ██</pre>
+    <h1 class="sr-only">{site.title}</h1>
+  </a>
+  <p class="motd">
+    <span class="prompt">$ cat MOTD</span>
+    <span class="motd__text">{site.tagline}</span>
+  </p>
+</header>
+
+<style>
+  .banner a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
+  pre {
+    margin: 0 0 6px;
+    font-weight: bold;
+    line-height: 1.05;
+    /* 50 columns wide; shrink on narrow screens before falling back to scroll */
+    font-size: clamp(7px, 2.7vw, 15px);
+    color: var(--fg-bright);
+    text-shadow: 0 0 8px rgba(77, 220, 77, 0.45);
+    letter-spacing: 0;
+  }
+  .motd {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 14px;
+  }
+  .motd__text {
+    color: var(--fg-text);
+  }
+</style>

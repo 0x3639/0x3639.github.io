@@ -1,5 +1,18 @@
-_site
-.sass-cache
-Gemfile.lock
-*.gem
-.jekyll-cache
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# environment
+.env
+.env.*
+
+# macOS
+.DS_Store

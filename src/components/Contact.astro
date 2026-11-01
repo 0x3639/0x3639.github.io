@@ -1,0 +1,87 @@
+---
+import Section from './Section.astro';
+import { contacts } from '../data/site';
+---
+
+<Section id="contact" title="Contact">
+  <p class="intro">
+    Reach me through any of the channels below. For anything that matters, encrypt it to the key in
+    the next section and verify the fingerprint out of band first.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Channel</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        contacts.map((c) => (
+          <tr>
+            <td class="channel">{c.channel}</td>
+            <td>
+              <span class="address">
+                {c.href ? <a href={c.href}>{c.label}</a> : <span class="plain">{c.label}</span>}
+                {c.tag && <span class="tag">{c.tag}</span>}
+              </span>
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</Section>
+
+<style>
+  .intro {
+    margin: 0 0 14px;
+    color: var(--amber);
+    max-width: 70ch;
+    text-wrap: pretty;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 0 32px;
+    border: 1px solid var(--border);
+  }
+  th,
+  td {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  thead tr {
+    background: var(--bg-raised);
+    color: var(--fg-text);
+  }
+  td {
+    overflow-wrap: anywhere;
+  }
+  th:first-child {
+    width: 130px;
+  }
+  .channel {
+    color: var(--fg-dim);
+  }
+
+  @media (max-width: 560px) {
+    th:first-child,
+    .channel {
+      width: 1%;
+      white-space: nowrap;
+    }
+  }
+  .plain {
+    color: var(--fg-text);
+  }
+  .address {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+  }
+</style>

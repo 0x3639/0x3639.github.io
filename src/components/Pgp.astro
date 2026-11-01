@@ -1,0 +1,117 @@
+---
+import Section from './Section.astro';
+import { pgp } from '../data/site';
+---
+
+<Section id="pgp" title="PGP public key">
+  <dl class="kv facts">
+    <dt>Fingerprint</dt>
+    <dd><code>{pgp.fingerprint}</code></dd>
+    <dt>Key ID</dt>
+    <dd><code>{pgp.keyId}</code></dd>
+    <dt>UID</dt>
+    <dd>{pgp.uid}</dd>
+    <dt>Type</dt>
+    <dd>{pgp.type}</dd>
+  </dl>
+
+  <p class="prompt cmd">$ gpg --armor --export {pgp.keyId}</p>
+  <pre id="pubkey" tabindex="0">{pgp.armored}</pre>
+
+  <p class="brackets actions">
+    <span hidden data-copy-wrap>[ <button type="button" data-copy>copy</button> ]</span>
+    <span>[ <a href={pgp.ascPath} download>download .asc</a> ]</span>
+    <span>[ <a href={pgp.keyserver}>keys.openpgp.org</a> ]</span>
+    <span class="status" role="status" aria-live="polite" data-copy-status></span>
+  </p>
+</Section>
+
+<style>
+  .facts {
+    margin-bottom: 14px;
+  }
+  code {
+    font: inherit;
+  }
+  .cmd {
+    margin: 0;
+  }
+  pre {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--fg);
+    background: var(--bg-pre);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    max-width: 620px;
+  }
+  .actions {
+    margin: 0 0 32px;
+  }
+  button {
+    font: inherit;
+    color: var(--amber);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  button:hover,
+  button:focus-visible {
+    color: var(--amber-hover);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    outline: none;
+  }
+  .status {
+    color: var(--fg-dim);
+  }
+</style>
+
+<script>
+  // Progressive enhancement: the copy control only appears when the
+  // Clipboard API exists. Without JS the page is complete as-is.
+  const wrap = document.querySelector<HTMLElement>('[data-copy-wrap]');
+  const button = document.querySelector<HTMLButtonElement>('[data-copy]');
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+  const key = document.getElementById('pubkey');
+
+  // Fallback for browsers that refuse the async API: select the block and
+  // use the legacy copy command, which only needs a user gesture.
+  function legacyCopy(el: HTMLElement): boolean {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const selection = window.getSelection();
+    if (!selection) return false;
+    selection.removeAllRanges();
+    selection.addRange(range);
+    let ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch {
+      ok = false;
+    }
+    selection.removeAllRanges();
+    return ok;
+  }
+
+  if (wrap && button && status && key) {
+    wrap.hidden = false;
+    button.addEventListener('click', async () => {
+      const text = key.textContent!.trim() + '\n';
+      let ok = false;
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(text);
+          ok = true;
+        } catch {
+          ok = false;
+        }
+      }
+      if (!ok) ok = legacyCopy(key);
+      status.textContent = ok ? 'copied' : 'copy failed — select the block instead';
+      window.setTimeout(() => (status.textContent = ''), 2500);
+    });
+  }
+</script>
