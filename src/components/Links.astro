@@ -1,0 +1,19 @@
+---
+import Section from './Section.astro';
+import { links } from '../data/site';
+---
+
+<Section id="links" title="Links">
+  <dl class="kv">
+    {
+      links.map((l) => (
+        <>
+          <dt>{l.label}</dt>
+          <dd>
+            <a href={l.href}>{l.text}</a>
+          </dd>
+        </>
+      ))
+    }
+  </dl>
+</Section>

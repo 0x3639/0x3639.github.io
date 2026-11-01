@@ -1,0 +1,19 @@
+---
+import Section from './Section.astro';
+import { site } from '../data/site';
+---
+
+<Section id="source" title="Source">
+  <p class="prompt about">
+    This page is static HTML, built with Astro. No cookies, no analytics, no third-party requests.
+    The only script on it is the copy button. <a href={site.repo}>View on GitHub</a>.
+  </p>
+</Section>
+
+<style>
+  .about {
+    margin: 0 0 28px;
+    max-width: 70ch;
+    text-wrap: pretty;
+  }
+</style>

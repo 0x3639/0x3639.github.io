@@ -1,0 +1,13 @@
+---
+import { nav } from '../data/site';
+---
+
+<nav class="brackets nav" aria-label="Sections">
+  {nav.map((item) => <span>[ <a href={item.href}>{item.label}</a> ]</span>)}
+</nav>
+
+<style>
+  .nav {
+    margin: 0 0 14px;
+  }
+</style>
