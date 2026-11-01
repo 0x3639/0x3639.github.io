@@ -5,18 +5,10 @@
 
 export const site = {
   title: '0x3639',
-  tagline: 'Zenon Network is an independent entity',
-  description: 'Contact channels and PGP public key for 0x3639.',
+  description: 'Contact 0x3639',
   url: 'https://0x3639.com',
   repo: 'https://github.com/0x3639/0x3639.github.io',
 };
-
-export const ticker = [
-  'CYPHERPUNKS WRITE CODE',
-  'PRIVACY IS NOT SECRECY',
-  'TRUST MATH, NOT MEN',
-  "VERIFY, DON'T TRUST",
-];
 
 export const nav = [
   { href: '#contact', label: 'contact' },

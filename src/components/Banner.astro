@@ -11,10 +11,6 @@ import { site } from '../data/site';
  ██████  ██   ██ ██████   ██████  ██████        ██</pre>
     <h1 class="sr-only">{site.title}</h1>
   </a>
-  <p class="motd">
-    <span class="prompt">$ cat MOTD</span>
-    <span class="motd__text">{site.tagline}</span>
-  </p>
 </header>
 
 <style>
@@ -24,21 +20,14 @@ import { site } from '../data/site';
     display: block;
   }
   pre {
-    margin: 0 0 6px;
+    margin: 0 0 24px;
     font-weight: bold;
     line-height: 1.05;
-    /* 50 columns wide; shrink on narrow screens before falling back to scroll */
-    font-size: clamp(7px, 2.7vw, 15px);
+    /* 50 columns wide; shrink with the viewport so it never scrolls */
+    font-size: clamp(7px, 1.7vw, 15px);
     color: var(--fg-bright);
     text-shadow: 0 0 8px rgba(77, 220, 77, 0.45);
     letter-spacing: 0;
-  }
-  .motd {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 14px;
-  }
-  .motd__text {
-    color: var(--fg-text);
+    overflow: hidden;
   }
 </style>

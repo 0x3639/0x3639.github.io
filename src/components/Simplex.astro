@@ -24,7 +24,8 @@ import { simplex } from '../data/site';
 <style>
   .simplex {
     display: flex;
-    gap: 28px;
+    flex-wrap: wrap;
+    gap: 24px 28px;
     align-items: flex-start;
     margin: 0 0 32px;
   }
@@ -41,7 +42,8 @@ import { simplex } from '../data/site';
     display: flex;
     flex-direction: column;
     gap: 6px;
-    max-width: 48ch;
+    flex: 1 1 260px;
+    min-width: 0;
     text-wrap: pretty;
   }
   .copy p {
@@ -49,11 +51,5 @@ import { simplex } from '../data/site';
   }
   .headline {
     color: var(--fg-text);
-  }
-
-  @media (max-width: 560px) {
-    .simplex {
-      flex-direction: column;
-    }
   }
 </style>
