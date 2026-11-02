@@ -38,15 +38,18 @@ import { pgp } from '../data/site';
   }
   pre {
     margin: 0 0 10px;
-    font-size: 14px;
+    /* shrink the 64-column armor on phones; scroll only as a last resort */
+    font-size: clamp(11px, 2.9vw, 14px);
     line-height: 1.45;
     color: var(--fg);
     background: var(--bg-pre);
     border: 1px solid var(--border);
     padding: 12px 14px;
-    max-width: 620px;
+    width: 100%;
+    overflow-x: auto;
   }
   .actions {
+    gap: 6px 10px;
     margin: 0 0 32px;
   }
   button {

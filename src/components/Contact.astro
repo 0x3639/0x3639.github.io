@@ -37,13 +37,11 @@ import { contacts } from '../data/site';
   .intro {
     margin: 0 0 14px;
     color: var(--amber);
-    max-width: 70ch;
     text-wrap: pretty;
   }
   table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 620px;
     margin: 0 0 32px;
     border: 1px solid var(--border);
   }
@@ -61,19 +59,13 @@ import { contacts } from '../data/site';
   td {
     overflow-wrap: anywhere;
   }
-  th:first-child {
-    width: 130px;
+  th:first-child,
+  .channel {
+    width: 110px;
+    white-space: nowrap;
   }
   .channel {
     color: var(--fg-dim);
-  }
-
-  @media (max-width: 560px) {
-    th:first-child,
-    .channel {
-      width: 1%;
-      white-space: nowrap;
-    }
   }
   .plain {
     color: var(--fg-text);
